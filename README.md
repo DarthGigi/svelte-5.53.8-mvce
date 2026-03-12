@@ -1,15 +1,13 @@
-# sv
+# Steps to reproduce
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+1. Install dependencies with `pnpm i`
+2. Start the development server with `pnpm dev`
+3. Open http://localhost:5173 in your browser and notice the page freezing:
 
-## Creating a project
+- Clicking the Bits-UI tabs does not work
+- Clicking the link to /hello-world does not trigger client-side navigation, but does update the URL
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project
-npx sv create my-app
-```
+5. Downgrade to Svelte 5.53.7 and notice that the issue is resolved. Might need to run `pnpm dedupe` after downgrading to ensure the correct version of Svelte is used.
 
 To recreate this project with the same configuration:
 
@@ -17,26 +15,3 @@ To recreate this project with the same configuration:
 # recreate this project
 pnpm dlx sv@0.12.6 create --template minimal --types ts --add prettier eslint sveltekit-adapter="adapter:node" devtools-json --install pnpm ./svelte-5.53.8-mvce
 ```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
