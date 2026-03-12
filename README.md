@@ -13,7 +13,7 @@
 
 It seems like `bits-ui` is needed to reproduce this issue, as the problem does not occur when using simple custom components or native HTML elements.
 
-Another interesting thing is that removing or changing the line at either `src/routes/+page.svelte#L23` or `src/routes/+page.svelte#L20` to not have the `bits-ui` avatar component seems to fix the issue
+Another interesting thing is that removing or changing the line at `src/routes/+page.svelte#L23` to not have the `bits-ui` avatar component or at `src/routes/+page.svelte#L20` to not have the remote function call (or the `bits-ui` avatar component) seems to fix the issue
 
 # sv
 
