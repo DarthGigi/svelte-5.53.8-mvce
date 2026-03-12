@@ -9,6 +9,14 @@
 
 5. Downgrade to Svelte 5.53.7 and notice that the issue is resolved. Might need to run `pnpm dedupe` after downgrading to ensure the correct version of Svelte is used.
 
+# Findings
+
+It seems like bits-ui is needed to reproduce this issue, as the problem does not occur when using simple custom components or native HTML elements.
+
+Another interesting thing is that removing or changing the line src/routes/+page.svelte#L23 to not have the `bits-ui` component seems to fix the issue
+
+# sv
+
 To recreate this project with the same configuration:
 
 ```sh
